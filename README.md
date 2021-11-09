@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/pi
 #### * Zsh with default plugins and config.
 
 ```bash
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/default-plugins/zshrc -O ~/.zshrc
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/default-plugins/zshrc -O ~/.zshrc && source ~/.zshrc
 ```
 
 ### Preview.
