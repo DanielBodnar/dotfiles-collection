@@ -16,6 +16,15 @@ promptinit
 bashcompinit
 zstyle :compinstall filename '$HOME/.zshrc'
 
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    command mkdir -p $HOME/.zinit
+    command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
+fi
+
+if [ ! -f ~/aliases/aliases ]; then mkdir ~/aliases && wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases; else source ~/aliases/aliases; fi
+
+plugins=(evalcache zsh-nvm git npm docker docker-compose terraform)
+
 # Gray color for autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
 
@@ -42,13 +51,11 @@ bindkey -M main '^[[B' history-substring-search-up
 bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
 
-if [ ! -f ~/aliases/aliases ]; then mkdir ~/aliases && wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases; else source ~/aliases/aliases; fi
-
 export LC_ALL=en_US.UTF-8
-export TERMINAL=kitty
+export TERMINAL=urxvt
 export PAGER=less
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 export LESS_TERMCAP_md=$'\e[1;36m'
@@ -62,4 +69,4 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=1000
 export DISABLE_AUTO_UPDATE="true"
-export POWERLEVEL9K_INSTANT_PROMPT=off
+export POWERLEVEL9K_INSTANT_PROMPT=on
