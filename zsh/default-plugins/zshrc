@@ -21,7 +21,7 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
 fi
 
-if [ ! -f ~/aliases/aliases ]; then wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases; else source ~/aliases/aliases; fi
+if [ ! -f ~/aliases/aliases ]; then (mkdir ~/aliases && wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases; else source ~/aliases/aliases); fi
 
 # Gray color for autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
