@@ -13,3 +13,13 @@ wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/pi
 ### Preview.
 
 ![Capture](https://user-images.githubusercontent.com/85412253/140907799-7deb8f1f-5e6f-48d1-99b2-85fd269c6668.PNG)
+
+
+
+## **Zsh.**
+
+#### * Zsh with default plugins and config.
+
+```bash
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/default-plugins/zshrc -O ~/.zshrc
+```
