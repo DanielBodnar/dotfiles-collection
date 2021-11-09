@@ -23,3 +23,7 @@ wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/pi
 ```bash
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/default-plugins/zshrc -O ~/.zshrc
 ```
+
+### Preview.
+
+![Capture](https://user-images.githubusercontent.com/85412253/140910698-40afb7f5-b6cc-44d1-a653-e47956ca174d.PNG)
