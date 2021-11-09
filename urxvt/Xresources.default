@@ -26,7 +26,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! special
 *.foreground:   #ecf0c1
-*.background:   #0f111b
+*.background:   #2e3440
 *.cursorColor:  #ecf0c1
 
 ! black
