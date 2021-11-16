@@ -6,41 +6,7 @@
 
 ![Capture](https://user-images.githubusercontent.com/85412253/140913594-285fbb1d-3e62-4703-b3ad-52f746b5fde3.PNG)
 
-```text
-! special
-*.foreground:   #ecf0c1
-*.background:   #0f111b
-*.cursorColor:  #ecf0c1
 
-! black
-*.color0:       #000000
-*.color8:       #686f9a
+#### ***Dracula.***
 
-! red
-*.color1:       #e33400
-*.color9:       #e33400
-
-! green
-*.color2:       #5ccc96
-*.color10:      #5ccc96
-
-! yellow
-*.color3:       #b3a1e6
-*.color11:      #b3a1e6
-
-! blue
-*.color4:       #00a3cc
-*.color12:      #00a3cc
-
-! magenta
-*.color5:       #f2ce00
-*.color13:      #f2ce00
-
-! cyan
-*.color6:       #7a5ccc
-*.color14:      #7a5ccc
-
-! white
-*.color7:       #686f9a
-*.color15:      #f0f1ce
-```
+![Capture](https://user-images.githubusercontent.com/85412253/141883041-18d166d9-0789-4ba0-aae1-91058b3b2d57.PNG)
