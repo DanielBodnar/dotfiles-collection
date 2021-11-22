@@ -112,6 +112,8 @@ mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz
 
 rm -rf ~/aliases && git clone https://github.com/dontdoxxmeplz/aliases ~/aliases/
 
+wget https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall60.jpg -O ~/.wallpaper.jpg --no-cache
+
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache
