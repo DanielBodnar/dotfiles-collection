@@ -120,9 +120,9 @@ EOF
 
 chmod +x ~/.zprofile
 
-sudo rm -rf /usr/share/fonts/customfonts && sudo git clone https://github.com/dontdoxxmeplz/fonts.git /usr/share/fonts/customfonts
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/ --no-cache
 
-if [ "$WM" = "i3" ]; then (mkdir -p ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache); fi
+if [ "$WM" = "i3" ]; then wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache; fi
 
 mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
 
