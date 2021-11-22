@@ -68,8 +68,9 @@ sudo bash -c 'sudo cat /proc/version > /etc/arch-release';
 sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 sudo systemctl restart vmtoolsd;
-sudo cat << EOF > /etc/systemd/system/vmwareuser.service
-'
+
+sudo bash -c 'cat << EOF > /etc/systemd/system/vmwareuser.service
+"
 [Unit]
 Description=VmwareUser
 After=network.target
@@ -83,10 +84,10 @@ ExecStart=vmware-user
 [Install]
 WantedBy=multi-user.target
 "
-EOF
+EOF'
 
 sudo cat << EOF > ~/.xinitrc
-'
+"
 setxkbmap -model apple -layout us -variant intl
 xbindkeys
 numlockx &
@@ -107,14 +108,14 @@ path=(
   /usr/local/{bin,sbin}
   $path
 )
-export LESS='-g -i -M -R -S -w -X -z-4'
+export LESS="-g -i -M -R -S -w -X -z-4"
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec ssh-agent startx
 fi
-"
+'
 EOF
 
 chmod +x ~/.zprofile
