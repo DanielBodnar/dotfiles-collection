@@ -140,6 +140,6 @@ client.focused_inactive  #24262b #24262b  #121212 #24262b
 client.unfocused         #24262b #24262b  #93a1a1 #24262b
 client.urgent            #121212 #121212  #fdf6e3 #121212
 
-if [[ ! -f /usr/bin/alternating_layouts.py ]]; then exec_always --no-startup-id python3 /usr/bin/alternating_layouts.py &; fi
-if [[ ! -f ~/.wallpaper.jpg ]]; then exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg; fi
-if [[ ! -f ~/.config/picom/picom.conf ]]; then exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &; fi
+exec_always --no-startup-id python3 /usr/bin/alternating_layouts.py &
+exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
