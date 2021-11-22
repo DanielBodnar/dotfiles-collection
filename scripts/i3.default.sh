@@ -61,10 +61,11 @@ ttf-font-awesome \
 w3m-imgcat
 
 if [ "$GPU" = "nvidia" ]; then sudo pacman -S nvidia nvidia-utils nvidia-settings -q --noconfirm --needed; fi
+
 if [ "$VMENGINE" = "vmware" ]; then
 sudo pacman -S mesa xf86-video-nouveau open-vm-tools gtkmm3 xf86-video-vmware -q --noconfirm --needed;
 yay -S xf86-input-vmmouse -q --noconfirm --needed;
-sudo bash -c 'sudo cat /proc/version > /etc/arch-release';
+sudo bash -c 'cat /proc/version > /etc/arch-release';
 sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 sudo systemctl restart vmtoolsd;
@@ -86,7 +87,7 @@ WantedBy=multi-user.target
 "
 EOF'
 
-sudo cat << EOF > ~/.xinitrc
+cat << EOF > ~/.xinitrc
 "
 setxkbmap -model apple -layout us -variant intl
 xbindkeys
@@ -100,8 +101,7 @@ chmod +x ~/.xinitrc
 sudo systemctl enable vmwareuser.service --now;
 fi
 
-
-sudo cat << EOF > ~/.zprofile
+cat << EOF > ~/.zprofile
 '
 typeset -gU cdpath fpath mailpath path
 path=(
