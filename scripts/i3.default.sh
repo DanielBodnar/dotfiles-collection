@@ -104,7 +104,7 @@ wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zs
 chmod +x ~/.zprofile
 fi
 
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/ --no-cache
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
 
 if [ "$WM" = "i3" ]; then mkdir ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache; fi
 
