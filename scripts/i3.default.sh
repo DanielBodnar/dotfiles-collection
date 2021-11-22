@@ -10,6 +10,7 @@ THEMENAME="example"
 GPU="nvidia"
 WM="i3"
 VMENGINE="vmware"
+WALLPAPERURL="https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall59.jpg"
 
 CURRENTUSER=$USER
 
@@ -110,9 +111,9 @@ if [ "$WM" = "i3" ]; then mkdir ~/.config/i3/ && wget https://raw.githubusercont
 
 mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
 
-rm -rf ~/aliases && git clone https://github.com/dontdoxxmeplz/aliases ~/aliases/
+rm -rf ~/aliases; mkdir ~/aliases && wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases -O ~/aliases/aliases
 
-wget https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall60.jpg -O ~/.wallpaper.jpg --no-cache
+wget $WALLPAPERURL -O ~/.wallpaper.jpg --no-cache
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache
 
