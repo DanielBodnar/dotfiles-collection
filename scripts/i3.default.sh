@@ -71,7 +71,7 @@ sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 sudo systemctl restart vmtoolsd;
 
-sudo bash -c "cat << EOF > /etc/systemd/system/vmwareuser.service
+sudo bash -c cat << "EOF" > /etc/systemd/system/vmwareuser.service
 [Unit]
 Description=VmwareUser
 After=network.target
@@ -84,7 +84,7 @@ User=$CURRENTUSER
 ExecStart=vmware-user
 [Install]
 WantedBy=multi-user.target
-EOF"
+EOF
 
 cat << EOF > ~/.xinitrc
 "
