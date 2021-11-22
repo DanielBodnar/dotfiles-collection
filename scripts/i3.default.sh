@@ -69,12 +69,11 @@ yay -S xf86-input-vmmouse -q --noconfirm --needed;
 sudo bash -c 'cat /proc/version > /etc/arch-release';
 sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
-sudo systemctl restart vmtoolsd;
 
 cat << EOF > ~/.xinitrc
 setxkbmap -model apple -layout us -variant intl
 xbindkeys
-vmtoolsd -n vmusr
+vmware-user &
 numlockx &
 exec i3
 EOF
