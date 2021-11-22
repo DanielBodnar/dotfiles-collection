@@ -74,16 +74,13 @@ sudo systemctl restart vmtoolsd;
 cat << EOF > ~/.xinitrc
 setxkbmap -model apple -layout us -variant intl
 xbindkeys
+vmtoolsd -n vmusr
 numlockx &
 exec i3
-vmtoolsd -n vmusr
 EOF
 
-chmod +x ~/.xinitrc
-sudo systemctl enable vmwareuser.service --now;
-
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
-chmod +x ~/.zprofile
+chmod +x ~/.zprofile ~/.xinitrc
 fi
 
 sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
