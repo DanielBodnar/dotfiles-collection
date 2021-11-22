@@ -41,3 +41,4 @@ bindkey -M main '^[[B' history-substring-search-up
 # Keybindings for autosuggestions plugin
 bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
+export PATH="/home/anon/.local/bin:/home/anon/go/bin:$PATH"
