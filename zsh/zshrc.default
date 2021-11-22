@@ -1,5 +1,6 @@
-if [[ ! -d $HOME/.zinit ]]; then clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin; fi
+if [[ ! -d $HOME/.zinit ]]; then git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin; fi
 if [[ ! -d $HOME/aliases ]]; then git clone https://github.com/dontdoxxmeplz/aliases ~/aliases; fi
+if [[ -f ~/.zinit/bin/zinit.zsh ]]; then source ~/.zinit/bin/zinit.zsh; fi
 
 setopt autocd extendedglob nomatch notify appendhistory sharehistory incappendhistory HIST_IGNORE_SPACE COMPLETE_ALIASES
 unsetopt beep
