@@ -71,26 +71,12 @@ sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 sudo systemctl restart vmtoolsd;
 
-sudo bash -c cat << EOF > /etc/systemd/system/vmwareuser.service
-[Unit]
-Description=VmwareUser
-After=network.target
-StartLimitIntervalSec=0
-[Service]
-Type=simple
-Restart=always
-RestartSec=1
-User=$CURRENTUSER
-ExecStart=vmware-user
-[Install]
-WantedBy=multi-user.target
-EOF
-
 cat << EOF > ~/.xinitrc
 setxkbmap -model apple -layout us -variant intl
 xbindkeys
 numlockx &
 exec i3
+vmtoolsd -n vmusr
 EOF
 
 chmod +x ~/.xinitrc
