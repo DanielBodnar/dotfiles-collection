@@ -1,4 +1,5 @@
-if [ ! -f $HOME/.zinit/bin/zinit.zsh ]; then command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin; else source ~/.zinit/bin/zinit.zsh fi
+if [[ ! -d $HOME/.zinit ]]; then clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin; fi
+if [[ ! -d $HOME/aliases ]]; then git clone https://github.com/dontdoxxmeplz/aliases ~/aliases; fi
 
 setopt autocd extendedglob nomatch notify appendhistory sharehistory incappendhistory HIST_IGNORE_SPACE COMPLETE_ALIASES
 unsetopt beep
@@ -11,8 +12,6 @@ zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
-if [ ! -f ~/aliases/aliases ]; then git clone https://github.com/dontdoxxmeplz/aliases ~/aliases; else source ~/aliases/aliases; fi
 
 plugins=(evalcache git docker)
 
@@ -41,19 +40,3 @@ bindkey -M main '^[[B' history-substring-search-up
 # Keybindings for autosuggestions plugin
 bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
-
-export LC_ALL=en_US.UTF-8
-export TERMINAL=urxvt
-export PAGER=less
-export VISUAL=nvim
-export EDITOR=nvim
-export TERM="xterm-256color"
-export LESS_TERMCAP_md=$'\e[1;36m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[1;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=1000
