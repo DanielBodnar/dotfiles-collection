@@ -7,8 +7,6 @@
 
 CURRENTUSER=$USER
 
-if [ ! -f ./env ]; then echo "ENVIRONMENT FILE DOESNT EXISTS (.env)." && exit; else source ./env fi
-
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
@@ -18,6 +16,7 @@ git clone https://aur.archlinux.org/yay.git /home/$CURRENTUSER/.yay && (cd /home
 sudo pacman -S -q --noconfirm --needed \
 acpi \
 dhcpcd \
+dos2unix \
 udisks2 \
 mediainfo \
 neovim \
@@ -32,8 +31,8 @@ i3-gaps \
 i3status-rust \
 linux-lts \
 lightdm \
-lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings \
+# lightdm-gtk-greeter \
+# lightdm-gtk-greeter-settings \
 lm_sensors \
 lxappearance-gtk3 \
 nautilus \
@@ -119,6 +118,8 @@ sudo rm -rf /usr/share/fonts/customfonts && sudo git clone https://github.com/do
 if [ "$WM" = "i3" ]; then (mkdir -p ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache); fi
 
 mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
+
+rm -rf ~/aliases && git clone https://github.com/dontdoxxmeplz/aliases ~/aliases/
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache
 
