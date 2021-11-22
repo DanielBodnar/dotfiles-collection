@@ -3,7 +3,13 @@
 # Variables.
 # $THEMENAME: Theme name
 # $WM: Windows Manager (i3)
-# $GPU: System GPU brand (nvidia) 
+# $GPU: System GPU brand (nvidia)
+# VMENGINE: virtualization (vmware)
+
+THEMENAME="example"
+GPU="nvidia"
+WM="i3"
+VMENGINE="vmware"
 
 CURRENTUSER=$USER
 
