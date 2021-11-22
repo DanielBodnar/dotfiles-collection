@@ -133,4 +133,4 @@ wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zs
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/vim/vimrc.default -O ~/.vimrc --no-cache
 
-sudo usermod --shell $(which zsh) "$CURRENTUSER"
+sudo usermod --shell $(which zsh) $CURRENTUSER
