@@ -13,7 +13,7 @@ sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip p
 
 if [ ! -f ./env ]; then echo "ENVIRONMENT FILE DOESNT EXISTS (.env)." && exit; else source ./env fi
 
-git clone https://aur.archlinux.org/yay.git /home/$SUDO_USER/.yay && (cd /home/$SUDO_USER/.yay && yes | makepkg -si) && yay -Suuy -q --noconfirm
+git clone https://aur.archlinux.org/yay.git /home/$CURRENTUSER/.yay && (cd /home/$CURRENTUSER/.yay && yes | makepkg -si) && yay -Suuy -q --noconfirm
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
@@ -74,7 +74,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=$SUDO_USER
+User=$CURRENTUSER
 ExecStart=vmware-user
 
 [Install]
