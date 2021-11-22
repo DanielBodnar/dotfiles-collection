@@ -7,11 +7,11 @@
 
 CURRENTUSER=$USER
 
+if [ ! -f ./env ]; then echo "ENVIRONMENT FILE DOESNT EXISTS (.env)." && exit; else source ./env fi
+
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
-
-if [ ! -f ./env ]; then echo "ENVIRONMENT FILE DOESNT EXISTS (.env)." && exit; else source ./env fi
 
 git clone https://aur.archlinux.org/yay.git /home/$CURRENTUSER/.yay && (cd /home/$CURRENTUSER/.yay && yes | makepkg -si) && yay -Suuy -q --noconfirm
 
@@ -69,14 +69,12 @@ sudo cat << EOF > /etc/systemd/system/vmwareuser.service
 Description=VmwareUser
 After=network.target
 StartLimitIntervalSec=0
-
 [Service]
 Type=simple
 Restart=always
 RestartSec=1
 User=$CURRENTUSER
 ExecStart=vmware-user
-
 [Install]
 WantedBy=multi-user.target
 "
@@ -118,14 +116,14 @@ chmod +x ~/.zprofile
 
 sudo rm -rf /usr/share/fonts/customfonts && sudo git clone https://github.com/dontdoxxmeplz/fonts.git /usr/share/fonts/customfonts
 
-if [ "$WM" = "i3" ]; then mkdir -p ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache; fi
+if [ "$WM" = "i3" ]; then (mkdir -p ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache); fi
 
-mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache;
+mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache;
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache;
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/vim/vimrc.default -O ~/.vimrc --no-cache;
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/vim/vimrc.default -O ~/.vimrc --no-cache
 
-sudo usermod --shell $(which zsh) $CURRENTUSER
+sudo usermod --shell $(which zsh) "$CURRENTUSER"
