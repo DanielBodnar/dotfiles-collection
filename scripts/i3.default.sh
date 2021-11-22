@@ -37,8 +37,8 @@ i3-gaps \
 i3status-rust \
 linux-lts \
 lightdm \
-# lightdm-gtk-greeter \
-# lightdm-gtk-greeter-settings \
+lightdm-gtk-greeter \
+lightdm-gtk-greeter-settings \
 lm_sensors \
 lxappearance-gtk3 \
 nautilus \
