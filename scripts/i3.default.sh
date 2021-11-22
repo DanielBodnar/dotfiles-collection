@@ -18,7 +18,7 @@ git config --global user.email "anon@anon.com" && git config --global user.name 
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
 
-git clone https://aur.archlinux.org/yay.git /home/$CURRENTUSER/.yay && (cd /home/$CURRENTUSER/.yay && yes | makepkg -si) && yay -Suuy -q --noconfirm
+rm -rf /home/$CURRENTUSER/.yay && git clone https://aur.archlinux.org/yay.git /home/$CURRENTUSER/.yay && (cd /home/$CURRENTUSER/.yay && yes | makepkg -si) && yay -Suuy -q --noconfirm
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
