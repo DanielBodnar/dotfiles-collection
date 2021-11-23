@@ -44,3 +44,4 @@ bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
 
 export PATH="/home/anon/.local/bin:/home/anon/go/bin:$PATH"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
