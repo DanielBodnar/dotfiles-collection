@@ -25,6 +25,7 @@ git clone https://aur.archlinux.org/yay.git $HOME/.yay;
 sudo pacman -S -q --noconfirm --needed \
 acpi \
 dhcpcd \
+calc \
 dos2unix \
 udisks2 \
 mediainfo \
@@ -60,6 +61,7 @@ python-i3ipc \
 alternating-layouts-git \
 networkmanager-dmenu-git \
 rofi \
+polybar \
 ttf-font-awesome \
 w3m-imgcat
 
