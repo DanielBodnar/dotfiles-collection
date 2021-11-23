@@ -11,6 +11,7 @@ GPU="nvidia"
 WM="i3"
 VMENGINE="vmware"
 WALLPAPERURL="https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall59.jpg"
+COLORSCHEMEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.nightburns"
 
 CURRENTUSER=$USER
 
@@ -94,7 +95,7 @@ rm -rf ~/aliases; mkdir ~/aliases && wget https://raw.githubusercontent.com/dont
 
 wget $WALLPAPERURL -O ~/.wallpaper.jpg --no-cache
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.dracula -O ~/.Xresources --no-cache
+wget $COLORSCHEMEURL -O ~/.Xresources --no-cache
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache
 
