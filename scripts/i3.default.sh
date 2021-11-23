@@ -22,6 +22,8 @@ sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip p
 git clone https://aur.archlinux.org/yay.git $HOME/.yay;
 (cd $HOME/.yay && yes | makepkg -si)
 
+mkdir ~/.config
+
 sudo pacman -S -q --noconfirm --needed \
 acpi \
 dhcpcd \
@@ -90,6 +92,8 @@ chmod +x ~/.zprofile ~/.xinitrc
 sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
 
 if [ "$WM" = "i3" ]; then mkdir ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache; fi
+
+git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
 mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
 
