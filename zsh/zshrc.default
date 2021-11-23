@@ -32,6 +32,7 @@ zinit load "zsh-users/zsh-autosuggestions"
 zinit load "zsh-users/zsh-syntax-highlighting"
 zinit load "zsh-users/zsh-history-substring-search"
 zinit load "MichaelAquilina/zsh-you-should-use"
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Keybindings for substring search plugin. Maps up and down arrows.
 bindkey -M main '^[OA' history-substring-search-up
