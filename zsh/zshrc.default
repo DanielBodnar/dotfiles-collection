@@ -15,6 +15,10 @@ if [[ ! -d $HOME/aliases ]]; then git clone https://github.com/dontdoxxmeplz/ali
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 plugins=(evalcache git docker)
 
 # Gray color for autosuggestions
