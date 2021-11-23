@@ -64,24 +64,25 @@ w3m-imgcat
 
 if [ "$GPU" = "nvidia" ]; then sudo pacman -S nvidia nvidia-utils nvidia-settings -q --noconfirm --needed; fi
 
+cat << EOF > ~/.xinitrc
+setxkbmap -model apple -layout us -variant intl
+xbindkeys
+numlockx &
+exec i3
+EOF
+
 if [ "$VMENGINE" = "vmware" ]; then
+echo "vmware-user &" >> ~/.xinitrc
 sudo pacman -S mesa xf86-video-nouveau open-vm-tools gtkmm3 xf86-video-vmware -q --noconfirm --needed;
 yay -S xf86-input-vmmouse -q --noconfirm --needed;
 sudo bash -c 'cat /proc/version > /etc/arch-release';
 sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
-
-cat << EOF > ~/.xinitrc
-setxkbmap -model apple -layout us -variant intl
-xbindkeys
-vmware-user &
-numlockx &
-exec i3
-EOF
+fi
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
+
 chmod +x ~/.zprofile ~/.xinitrc
-fi
 
 sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
 
