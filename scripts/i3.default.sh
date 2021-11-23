@@ -22,7 +22,7 @@ sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip p
 git clone https://aur.archlinux.org/yay.git $HOME/.yay;
 (cd $HOME/.yay && yes | makepkg -si)
 
-mkdir ~/.config
+
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
@@ -85,26 +85,39 @@ sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 fi
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
+rm -rf \
+~/.zprofile \
+~/.p10k.zsh \
+~/.zinit/bin \
+ ~/aliases \
+~/.vimrc \
+~/.zshrc \
+~/.Xresources \
+~/.wallpaper.jpg \
+~/.config/rofi/rofi.rasi \
+~/.config/i3/
 
-chmod +x ~/.zprofile ~/.xinitrc
+mkdir -p \
+~/.zinit/bin \
+~/aliases \
+~/.config/rofi \
+~/.config/i3
 
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
 
-if [ "$WM" = "i3" ]; then mkdir ~/.config/i3/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache; fi
-
+git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
-mkdir -p ~/.config/rofi/ && wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
-
-rm -rf ~/aliases; mkdir ~/aliases && wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases -O ~/aliases/aliases
-
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache;
+wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases -O ~/aliases/aliases
 wget $WALLPAPERURL -O ~/.wallpaper.jpg --no-cache
-
 wget $COLORSCHEMEURL -O ~/.Xresources --no-cache
-
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache
-
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/vim/vimrc.default -O ~/.vimrc --no-cache
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
+
+chmod +x ~/.zprofile ~/.xinitrc
 
 sudo usermod --shell $(which zsh) $CURRENTUSER
