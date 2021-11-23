@@ -1,3 +1,7 @@
+[[ -f ~/.p10k.zsh ]] || wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
+[[ -d ~/.zinit ]] || git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
+[[ -d ~/aliases ]] || git clone https://github.com/dontdoxxmeplz/aliases ~/aliases
+
 setopt autocd extendedglob nomatch notify appendhistory sharehistory incappendhistory HIST_IGNORE_SPACE COMPLETE_ALIASES
 unsetopt beep
 bindkey -e
@@ -7,9 +11,6 @@ promptinit
 bashcompinit
 zstyle :compinstall filename '$HOME/.zshrc'
 
-if [[ ! -d $HOME/.zinit ]]; then git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin; fi
-if [[ ! -d $HOME/aliases ]]; then git clone https://github.com/dontdoxxmeplz/aliases ~/aliases; fi
-[[ ! -f ~/aliases/aliases ]] || source ~/aliases/aliases
 [[ ! -f ~/.zinit/bin/zinit.zsh ]] || source ~/.zinit/bin/zinit.zsh
 
 autoload -Uz _zinit
@@ -49,4 +50,6 @@ bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
 
 export PATH="/home/anon/.local/bin:/home/anon/go/bin:$PATH"
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/aliases/aliases ]] || source ~/aliases/aliases
