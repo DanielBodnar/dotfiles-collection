@@ -87,6 +87,7 @@ fi
 
 rm -rf \
 ~/.zprofile \
+~/.zshenv \
 ~/.p10k.zsh \
 ~/.zinit/bin \
  ~/aliases \
@@ -109,6 +110,7 @@ git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-theme
 
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
+wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshenv.default -O ~/.zshenv --no-cache
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
 wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache;
 wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases -O ~/aliases/aliases
