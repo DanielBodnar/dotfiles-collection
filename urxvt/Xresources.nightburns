@@ -9,6 +9,22 @@ URxvt.boldFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Bold
 URxvt.italicFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Italic
 URxvt.boldItalicFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Bold:Italic
 
+! Parameters.
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -3
+URxvt.iso14755:                 false     
+URxvt.iso14755_52:              false   
+URxvt*geometry:                 65x17   
+URxvt.scrollBar:                false
+URxvt*loginShell:               true    
+URxvt.allow_bold:               true      
+URxvt.internalBorder:           35
+URxvt.clipboard.autocopy:       true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
 ! Generated with :
 ! XRDB2Xreources.py
 !
