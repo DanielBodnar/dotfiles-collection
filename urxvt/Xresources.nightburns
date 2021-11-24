@@ -1,4 +1,14 @@
-!
+! Define Xfts here.
+Xft.dpi:                        109
+
+! rxvt-unicode -------
+
+URxvt*termName:rxvt-256color
+URxvt.font: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Bold:Italic
+URxvt.boldFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Bold
+URxvt.italicFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Italic
+URxvt.boldItalicFont: xft:APL386 Nerd Font Mono:style=Book:pixelsize=15.5:Bold:Italic
+
 ! Generated with :
 ! XRDB2Xreources.py
 !
