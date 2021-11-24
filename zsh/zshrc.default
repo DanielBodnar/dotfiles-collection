@@ -2,11 +2,6 @@
 [[ -d ~/.zinit ]] || command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
 [[ -d ~/aliases ]] || command git clone https://github.com/dontdoxxmeplz/aliases ~/aliases
 
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    command mkdir -p $HOME/.zinit
-    command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
-fi
-
 setopt autocd extendedglob nomatch notify appendhistory sharehistory incappendhistory HIST_IGNORE_SPACE COMPLETE_ALIASES
 unsetopt beep
 bindkey -e
