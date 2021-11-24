@@ -36,6 +36,7 @@ sudo pacman -S -q --noconfirm --needed \
 acpi \
 dhcpcd \
 calc \
+docker \
 dos2unix \
 udisks2 \
 mediainfo \
@@ -72,6 +73,7 @@ alternating-layouts-git \
 networkmanager-dmenu-git \
 rofi \
 polybar \
+picom \
 ttf-font-awesome \
 w3m-imgcat
 
@@ -129,5 +131,10 @@ wget $ALIASESURL -O ~/aliases/aliases;
 wget $WALLPAPERURL -O ~/.wallpaper.jpg;
 
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
+
+sudo groupadd docker
+sudo usermod -aG docker $CURRENTUSER
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
 
 sudo usermod --shell $(which zsh) $CURRENTUSER
