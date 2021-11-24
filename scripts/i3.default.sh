@@ -103,19 +103,23 @@ rm -rf \
 ~/.Xresources \
 ~/.wallpaper.jpg \
 ~/.config/rofi/rofi.rasi \
-~/.config/i3/
+~/.config/i3 \
+~/.config/picom
 
 mkdir -p \
 ~/.zinit/bin \
 ~/aliases \
 ~/.config/rofi \
-~/.config/i3
+~/.config/i3 \
+~/.config/picom
 
 git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
 wget $P10KURL -O ~/.p10k.zsh --no-cache;
 wget $ZPROFILEURL  -O ~/.zprofile --no-cache;
+wget $COLORSCHEMEURL -O ~/.Xresources --no-cache;
+wget $PICOMURL -O ~/.config/picom/picom.conf --no-cache
 wget $ZSHENVURL -O ~/.zshenv --no-cache;
 wget $ROFIURL -O ~/.config/rofi/rofi.rasi --no-cache;
 wget $I3CONFIGURL -O ~/.config/i3/config --no-cache;
