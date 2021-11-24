@@ -87,7 +87,7 @@ exec i3
 EOF
 
 if [ "$VMENGINE" = "vmware" ]; then
-echo "vmware-user &" >> ~/.xinitrc
+echo vmware-user & >> ~/.xinitrc
 sudo pacman -S mesa xf86-video-nouveau open-vm-tools gtkmm3 xf86-video-vmware -q --noconfirm --needed;
 yay -S xf86-input-vmmouse -q --noconfirm --needed;
 sudo bash -c 'cat /proc/version > /etc/arch-release';
