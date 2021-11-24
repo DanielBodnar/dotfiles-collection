@@ -26,7 +26,7 @@ CURRENTUSER=$USER
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf
 
 rm -rf ~/.yay;
 git clone $YAYURL ~/.yay;
@@ -75,6 +75,8 @@ rofi \
 polybar \
 picom \
 ttf-font-awesome \
+awesome-terminal-fonts \
+ttf-meslo-nerd-font-powerlevel10k \
 w3m-imgcat
 
 if [ "$GPU" = "nvidia" ]; then sudo pacman -S nvidia nvidia-utils nvidia-settings -q --noconfirm --needed; fi
@@ -108,8 +110,10 @@ wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
 wget "$I3CONFIGURL" -O ~/.config/i3/config
 wget "$ALIASESURL" -O ~/aliases/aliases
 wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
-
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
+
+# Install oh-my-zsh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 sudo groupadd docker
 sudo usermod -aG docker $CURRENTUSER
