@@ -99,8 +99,7 @@ rm -rf \
 ~/.zprofile \
 ~/.zshenv \
 ~/.p10k.zsh \
-~/.zinit/bin \
- ~/aliases \
+~/aliases \
 ~/.vimrc \
 ~/.zshrc \
 ~/.Xresources \
@@ -110,7 +109,6 @@ rm -rf \
 ~/.config/picom
 
 mkdir -p \
-~/.zinit/bin \
 ~/aliases \
 ~/.config/rofi \
 ~/.config/i3 \
@@ -136,5 +134,4 @@ sudo groupadd docker
 sudo usermod -aG docker $CURRENTUSER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
-
 sudo usermod --shell $(which zsh) $CURRENTUSER
