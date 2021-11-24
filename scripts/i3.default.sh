@@ -73,7 +73,7 @@ alternating-layouts-git \
 networkmanager-dmenu-git \
 rofi \
 polybar \
-picom \
+picom-tryone-git \
 ttf-font-awesome \
 awesome-terminal-fonts \
 ttf-meslo-nerd-font-powerlevel10k \
