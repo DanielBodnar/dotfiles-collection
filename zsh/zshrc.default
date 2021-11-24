@@ -1,6 +1,11 @@
-[[ -f ~/.p10k.zsh ]] || wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
-[[ -d ~/.zinit ]] || git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
-[[ -d ~/aliases ]] || git clone https://github.com/dontdoxxmeplz/aliases ~/aliases
+[[ -f ~/.p10k.zsh ]] || command wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
+[[ -d ~/.zinit ]] || command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
+[[ -d ~/aliases ]] || command git clone https://github.com/dontdoxxmeplz/aliases ~/aliases
+
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    command mkdir -p $HOME/.zinit
+    command git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
+fi
 
 setopt autocd extendedglob nomatch notify appendhistory sharehistory incappendhistory HIST_IGNORE_SPACE COMPLETE_ALIASES
 unsetopt beep
@@ -12,6 +17,8 @@ bashcompinit
 zstyle :compinstall filename '$HOME/.zshrc'
 
 [[ ! -f ~/.zinit/bin/zinit.zsh ]] || source ~/.zinit/bin/zinit.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/aliases/aliases ]] || source ~/aliases/aliases
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -30,14 +37,13 @@ FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git --exclude .cache'
 FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
 # Load plugins
-zinit load "woefe/wbase.zsh"
 zinit load "woefe/git-prompt.zsh"
 zinit load "zsh-users/zsh-completions"
 zinit load "zsh-users/zsh-autosuggestions"
 zinit load "zsh-users/zsh-syntax-highlighting"
 zinit load "zsh-users/zsh-history-substring-search"
 zinit load "MichaelAquilina/zsh-you-should-use"
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light "romkatv/powerlevel10k"
 
 # Keybindings for substring search plugin. Maps up and down arrows.
 bindkey -M main '^[OA' history-substring-search-up
@@ -50,6 +56,3 @@ bindkey '^ ' autosuggest-accept
 bindkey '^f' autosuggest-accept
 
 export PATH="/home/anon/.local/bin:/home/anon/go/bin:$PATH"
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[[ ! -f ~/aliases/aliases ]] || source ~/aliases/aliases
