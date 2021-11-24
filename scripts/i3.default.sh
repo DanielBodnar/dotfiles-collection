@@ -18,16 +18,17 @@ ZSHENVURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/m
 ROFIURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple"
 I3CONFIGURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default"
 ALIASESURL="https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases"
+YAYURL="https://aur.archlinux.org/yay.git"
 CURRENTUSER=$USER
-
 
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
+sudo bash -c "rm -rf /usr/share/fonts/APL386-Awesome.ttf || wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache"
 
-git clone https://aur.archlinux.org/yay.git $HOME/.yay;
-(cd $HOME/.yay && yes | makepkg -si)
+rm -rf ~/.yay;
+git clone $YAYURL ~/.yay;
+(cd ~/.yay && yes | makepkg -si)
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
