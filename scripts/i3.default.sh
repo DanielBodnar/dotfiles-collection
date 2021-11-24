@@ -13,6 +13,7 @@ VMENGINE="vmware"
 PICOMURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/picom/picom.conf.shadows"
 WALLPAPERURL="https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall59.jpg"
 COLORSCHEMEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.nightburns"
+ZSHRCURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default"
 P10KURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh"
 ZPROFILEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default"
 ZSHENVURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshenv.default"
@@ -117,6 +118,7 @@ git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
 wget $P10KURL -O ~/.p10k.zsh --no-cache;
+wget $ZSHRCURL -O ~/.zshrc --no-cache;
 wget $ZPROFILEURL  -O ~/.zprofile --no-cache;
 wget $COLORSCHEMEURL -O ~/.Xresources --no-cache;
 wget $PICOMURL -O ~/.config/picom/picom.conf --no-cache
@@ -126,6 +128,6 @@ wget $I3CONFIGURL -O ~/.config/i3/config --no-cache;
 wget $ALIASESURL -O ~/aliases/aliases;
 wget $WALLPAPERURL -O ~/.wallpaper.jpg;
 
-chmod +x ~/.zprofile ~/.xinitrc
+chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
 
 sudo usermod --shell $(which zsh) $CURRENTUSER
