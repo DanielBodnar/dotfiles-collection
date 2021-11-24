@@ -28,3 +28,22 @@ shadow-exclude = [               # Do not draw shadows on these specific applica
     "class_g ?= 'Xfce4-notifyd'",
     "class_g ?= 'Xfce4-power-manager'"
 ];
+
+blur-method = "dual_kawase"
+blur-size = 12
+blur-strength = 4
+blur-background = true
+blur-background-frame = true
+blur-kern = "3x3box";
+
+blur-background-exclude = [
+  "class_g = 'Polybar'",
+  "window_type = 'Rofi'",
+  "window_type = 'desktop'",
+  "window_type = 'dock'"
+];
+
+opacity-rule = [
+    "98:class_g = 'URxvt' && focused",
+    "30:class_g = 'URxvt' && !focused",
+];
