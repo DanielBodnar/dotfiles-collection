@@ -29,7 +29,7 @@ sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip p
 sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache"
 
 rm -rf ~/.yay;
-git clone $YAYURL ~/.yay;
+git clone "$YAYURL" ~/.yay;
 (cd ~/.yay && yes | makepkg -si)
 
 sudo pacman -S -q --noconfirm --needed \
