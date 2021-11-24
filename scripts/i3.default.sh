@@ -26,7 +26,7 @@ CURRENTUSER=$USER
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
-sudo bash -c "rm -rf /usr/share/fonts/APL386-Awesome.ttf || wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache"
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache"
 
 rm -rf ~/.yay;
 git clone $YAYURL ~/.yay;
