@@ -12,17 +12,22 @@ WM="i3"
 VMENGINE="vmware"
 WALLPAPERURL="https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall59.jpg"
 COLORSCHEMEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.nightburns"
-
+P10KURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh"
+ZPROFILEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default"
+ZSHENVURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshenv.default"
+ROFIURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple"
+I3CONFIGURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default"
+ALIASESURL="https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases"
 CURRENTUSER=$USER
+
 
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
 
 git clone https://aur.archlinux.org/yay.git $HOME/.yay;
 (cd $HOME/.yay && yes | makepkg -si)
-
-
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
@@ -104,21 +109,15 @@ mkdir -p \
 ~/.config/rofi \
 ~/.config/i3
 
-
 git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh -O ~/.p10k.zsh --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default -O ~/.zprofile --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshenv.default -O ~/.zshenv --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple -O ~/.config/rofi/rofi.rasi --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default -O ~/.config/i3/config --no-cache;
-wget https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases -O ~/aliases/aliases
-wget $WALLPAPERURL -O ~/.wallpaper.jpg --no-cache
-wget $COLORSCHEMEURL -O ~/.Xresources --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default -O ~/.zshrc --no-cache
-wget https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/vim/vimrc.default -O ~/.vimrc --no-cache
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf --no-cache
+wget $P10KURL -O ~/.p10k.zsh --no-cache;
+wget $ZPROFILEURL  -O ~/.zprofile --no-cache;
+wget $ZSHENVURL -O ~/.zshenv --no-cache;
+wget $ROFIURL -O ~/.config/rofi/rofi.rasi --no-cache;
+wget $I3CONFIGURL -O ~/.config/i3/config --no-cache;
+wget $ALIASESURL -O ~/aliases/aliases;
 
 chmod +x ~/.zprofile ~/.xinitrc
 
