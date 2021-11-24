@@ -124,6 +124,7 @@ wget $ZSHENVURL -O ~/.zshenv --no-cache;
 wget $ROFIURL -O ~/.config/rofi/rofi.rasi --no-cache;
 wget $I3CONFIGURL -O ~/.config/i3/config --no-cache;
 wget $ALIASESURL -O ~/aliases/aliases;
+wget $WALLPAPERURL -O ~/.wallpaper.jpg;
 
 chmod +x ~/.zprofile ~/.xinitrc
 
