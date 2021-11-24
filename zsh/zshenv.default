@@ -1,5 +1,5 @@
 export LC_ALL=en_US.UTF-8
-export TERMINAL=kitty
+export TERMINAL=urxvt
 export PAGER=less
 export VISUAL=neovim
 export EDITOR=neovim
@@ -13,8 +13,8 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=250
+export SAVEHIST=250
 export DISABLE_AUTO_UPDATE="true"
 export POWERLEVEL9K_INSTANT_PROMPT=off
 
