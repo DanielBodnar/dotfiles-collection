@@ -95,43 +95,25 @@ sudo systemctl enable vmtoolsd --now;
 sudo systemctl enable vmware-vmblock-fuse --now;
 fi
 
-rm -rf \
-~/.zprofile \
-~/.zshenv \
-~/.p10k.zsh \
-~/aliases \
-~/.vimrc \
-~/.zshrc \
-~/.Xresources \
-~/.wallpaper.jpg \
-~/.config/rofi/rofi.rasi \
-~/.config/i3 \
-~/.config/picom
-
-mkdir -p \
-~/aliases \
-~/.config/rofi \
-~/.config/i3 \
-~/.config/picom
-
 git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
-wget $P10KURL -O ~/.p10k.zsh --no-cache;
-wget $ZSHRCURL -O ~/.zshrc --no-cache;
-wget $ZPROFILEURL  -O ~/.zprofile --no-cache;
-wget $COLORSCHEMEURL -O ~/.Xresources --no-cache;
-wget $PICOMURL -O ~/.config/picom/picom.conf --no-cache
-wget $ZSHENVURL -O ~/.zshenv --no-cache;
-wget $ROFIURL -O ~/.config/rofi/rofi.rasi --no-cache;
-wget $I3CONFIGURL -O ~/.config/i3/config --no-cache;
-wget $ALIASESURL -O ~/aliases/aliases;
-wget $WALLPAPERURL -O ~/.wallpaper.jpg;
+wget "$P10KURL" -O ~/.p10k.zsh
+wget "$ZSHRCURL" -O ~/.zshrc
+wget "$ZPROFILEURL"  -O ~/.zprofile
+wget "$COLORSCHEMEURL" -O ~/.Xresources
+wget "$PICOMURL" -O ~/.config/picom/picom.conf
+wget "$ZSHENVURL" -O ~/.zshenv --no-cache
+wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
+wget "$I3CONFIGURL" -O ~/.config/i3/config
+wget "$ALIASESURL" -O ~/aliases/aliases
+wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
 
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
 
 sudo groupadd docker
 sudo usermod -aG docker $CURRENTUSER
+sudo usermod -aG sudo $CURRENTUSER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 sudo usermod --shell $(which zsh) $CURRENTUSER
