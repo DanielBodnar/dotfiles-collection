@@ -58,6 +58,7 @@ lm_sensors \
 lxappearance-gtk3 \
 nautilus \
 rxvt-unicode \
+remmina \
 xclip \
 xbindkeys \
 xorg \
@@ -68,14 +69,16 @@ xorg-xrandr \
 zsh
 
 yay -S -q --noconfirm --needed \
-python-i3ipc \
 alternating-layouts-git \
+awesome-terminal-fonts \
+python-i3ipc \
 networkmanager-dmenu-git \
 rofi \
 polybar \
 picom-tryone-git \
 ttf-font-awesome \
-awesome-terminal-fonts \
+
+remmina-plugin-rdesktop \
 ttf-meslo-nerd-font-powerlevel10k \
 w3m-imgcat
 
