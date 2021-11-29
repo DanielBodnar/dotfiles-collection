@@ -77,7 +77,6 @@ rofi \
 polybar \
 picom-tryone-git \
 ttf-font-awesome \
-
 remmina-plugin-rdesktop \
 ttf-meslo-nerd-font-powerlevel10k \
 w3m-imgcat
