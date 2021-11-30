@@ -49,10 +49,9 @@ firefox \
 feh \
 imagemagick \
 i3-gaps \
-i3status-rust \
 linux-lts \
+lib32-util-linux \
 libvirt \
-virt-install \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
@@ -61,6 +60,7 @@ lxappearance-gtk3 \
 nautilus \
 rxvt-unicode \
 remmina \
+virt-install \
 xclip \
 xbindkeys \
 xorg \
