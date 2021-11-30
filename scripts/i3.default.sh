@@ -43,6 +43,7 @@ mediainfo \
 neovim \
 openssh \
 python3 \
+qutebrowser \
 wget \
 arandr \
 firefox \
