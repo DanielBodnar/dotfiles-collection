@@ -51,6 +51,8 @@ imagemagick \
 i3-gaps \
 i3status-rust \
 linux-lts \
+libvirt \
+virt-install \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
