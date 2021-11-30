@@ -69,6 +69,7 @@ xorg-xrandr \
 zsh
 
 yay -S -q --noconfirm --needed \
+3mux \
 alternating-layouts-git \
 awesome-terminal-fonts \
 python-i3ipc \
