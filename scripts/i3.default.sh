@@ -105,20 +105,20 @@ fi
 git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
 
-wget "$P10KURL" -O ~/.p10k.zsh
-wget "$ZSHRCURL" -O ~/.zshrc
-wget "$ZPROFILEURL"  -O ~/.zprofile
-wget "$COLORSCHEMEURL" -O ~/.Xresources
-wget "$PICOMURL" -O ~/.config/picom/picom.conf
+wget "$P10KURL" -O ~/.p10k.zsh --no-cache
+wget "$ZSHRCURL" -O ~/.zshrc --no-cache
+wget "$ZPROFILEURL"  -O ~/.zprofile --no-cache
+wget "$COLORSCHEMEURL" -O ~/.Xresources --no-cache
+wget "$PICOMURL" -O ~/.config/picom/picom.conf --no-cache
 wget "$ZSHENVURL" -O ~/.zshenv --no-cache
-wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
-wget "$I3CONFIGURL" -O ~/.config/i3/config
-wget "$ALIASESURL" -O ~/aliases/aliases
-wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
+wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi --no-cache
+wget "$I3CONFIGURL" -O ~/.config/i3/config --no-cache
+wget "$ALIASESURL" -O ~/aliases/aliases --no-cache
+wget "$WALLPAPERURL" -O ~/.wallpaper.jpg --no-cache
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
 
 # Install oh-my-zsh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+# sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 sudo groupadd docker
 sudo usermod -aG docker $CURRENTUSER
