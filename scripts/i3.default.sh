@@ -19,6 +19,7 @@ ZPROFILEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection
 ZSHENVURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshenv.default"
 ROFIURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple"
 I3CONFIGURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default"
+XBINDKEYSURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/xbindkeysrc/xbindkeysrc.default"
 ALIASESURL="https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases"
 YAYURL="https://aur.archlinux.org/yay.git"
 CURRENTUSER=$USER
@@ -138,6 +139,7 @@ wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
 wget "$I3CONFIGURL" -O ~/.config/i3/config
 wget "$ALIASESURL" -O ~/aliases/aliases
 wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
+wget "$XBINDKEYSURL" -O ~/.xbindkeysrc
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
 
 # Install oh-my-zsh
