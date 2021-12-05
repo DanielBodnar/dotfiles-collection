@@ -23,25 +23,42 @@ ALIASESURL="https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases
 YAYURL="https://aur.archlinux.org/yay.git"
 CURRENTUSER=$USER
 
+rm -rf ~/.config
+mkdir -p ~/.config/
+mkdir -p ~/.config/picom/
+mkdir -p ~/.config/rofi/
+mkdir -p ~/.config/i3/
+mkdir -p ~/aliases/
+
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
 sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf
 
+if ! [ -x "$(command -v yay)" ]; 
+then
 rm -rf ~/.yay;
 git clone $YAYURL ~/.yay;
 (cd ~/.yay && yes | makepkg -si)
+fi
+
+yay -Suuy -q --noconfirm --needed
 
 sudo pacman -S -q --noconfirm --needed \
 acpi \
+base-devel \
 dhcpcd \
 calc \
 docker \
 dos2unix \
+go \
 udisks2 \
 mediainfo \
 neovim \
 openssh \
+pacman-contrib \
+pavucontrol \
+python-pip \
 python3 \
 qutebrowser \
 wget \
@@ -51,6 +68,7 @@ feh \
 imagemagick \
 i3-gaps \
 linux-lts \
+jq \
 lib32-util-linux \
 libvirt \
 lightdm \
@@ -61,6 +79,7 @@ lxappearance-gtk3 \
 nautilus \
 rxvt-unicode \
 remmina \
+ranger \
 virt-install \
 xclip \
 xbindkeys \
@@ -69,6 +88,8 @@ xorg-server \
 xorg-xinit \
 xorg-xprop \
 xorg-xrandr \
+xf86-video-nouveau \
+mesa \
 zsh
 
 yay -S -q --noconfirm --needed \
@@ -82,7 +103,8 @@ picom-tryone-git \
 ttf-font-awesome \
 remmina-plugin-rdesktop \
 ttf-meslo-nerd-font-powerlevel10k \
-w3m-imgcat
+w3m-imgcat \
+zsh-theme-powerlevel10k-git
 
 if [ "$GPU" = "nvidia" ]; then sudo pacman -S nvidia nvidia-utils nvidia-settings -q --noconfirm --needed; fi
 
@@ -95,7 +117,7 @@ EOF
 
 if [ "$VMENGINE" = "vmware" ]; then
 echo vmware-user & >> ~/.xinitrc
-sudo pacman -S mesa xf86-video-nouveau open-vm-tools gtkmm3 xf86-video-vmware -q --noconfirm --needed;
+sudo pacman -S open-vm-tools gtkmm3 xf86-video-vmware -q --noconfirm --needed;
 yay -S xf86-input-vmmouse -q --noconfirm --needed;
 sudo bash -c 'cat /proc/version > /etc/arch-release';
 sudo systemctl enable vmtoolsd --now;
@@ -104,17 +126,18 @@ fi
 
 git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-themes
+(cd ~/.config/polybar-themes && echo 2 | ./setup.sh)
 
-wget "$P10KURL" -O ~/.p10k.zsh --no-cache
-wget "$ZSHRCURL" -O ~/.zshrc --no-cache
-wget "$ZPROFILEURL"  -O ~/.zprofile --no-cache
-wget "$COLORSCHEMEURL" -O ~/.Xresources --no-cache
-wget "$PICOMURL" -O ~/.config/picom/picom.conf --no-cache
-wget "$ZSHENVURL" -O ~/.zshenv --no-cache
-wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi --no-cache
-wget "$I3CONFIGURL" -O ~/.config/i3/config --no-cache
-wget "$ALIASESURL" -O ~/aliases/aliases --no-cache
-wget "$WALLPAPERURL" -O ~/.wallpaper.jpg --no-cache
+wget "$P10KURL" -O ~/.p10k.zsh
+wget "$ZSHRCURL" -O ~/.zshrc
+wget "$ZPROFILEURL"  -O ~/.zprofile
+wget "$COLORSCHEMEURL" -O ~/.Xresources
+wget "$PICOMURL" -O ~/.config/picom/picom.conf
+wget "$ZSHENVURL" -O ~/.zshenv
+wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
+wget "$I3CONFIGURL" -O ~/.config/i3/config
+wget "$ALIASESURL" -O ~/aliases/aliases
+wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
 
 # Install oh-my-zsh
