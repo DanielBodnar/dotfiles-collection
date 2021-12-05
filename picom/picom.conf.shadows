@@ -1,11 +1,11 @@
 #--------------------------------
 #-------Backend Settings:--------
 #--------------------------------
-backend = "glx";
-vsync = true;
-glx-swap-method = 3;             # Use a triple-buffer
-glx-no-stencil = true;           # Improves performance
-glx-no-rebind-pixmap = true;     # Improves performance with rapid window changes, might not work with some drivers
+backend = "xrender";
+vsync = false;
+# glx-no-stencil = true;           # Improves performance
+# glx-swap-method = 3;             # Use a triple-buffer
+# glx-no-rebind-pixmap = true;     # Improves performance with rapid window changes, might not work with some drivers
 
 
 #--------------------------------
