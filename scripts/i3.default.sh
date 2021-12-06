@@ -71,7 +71,6 @@ i3-gaps \
 linux-lts \
 jq \
 lib32-util-linux \
-libvirt \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
@@ -81,7 +80,6 @@ nautilus \
 rxvt-unicode \
 remmina \
 ranger \
-virt-install \
 xclip \
 xbindkeys \
 xorg \
