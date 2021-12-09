@@ -66,7 +66,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating.
-bindsym --border button1 floating toggle
+bindsym Control+space floating toggle
 
 # Change focus between tiling / floating windows.
 bindsym $mod+space focus mode_toggle
@@ -110,8 +110,7 @@ for_window [class="^Arandr$"]       floating enable
 for_window [class="^Rofi$"]       floating enable
 
 floating_minimum_size 250 x 250
-default_floating_border pixel 10
-default_border pixel 10
+default_floating_border pixel 3
 
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
@@ -135,12 +134,13 @@ mode "resize"
 
 bindsym $mod+r mode "resize"
 
-# class                  border    bground   text    indicator
-client.focused           #151515   #151515   #151515 #151515
-client.focused_inactive  #151515   #151515   #151515 #151515
-client.unfocused         #24262b   #24262b   #93a1a1 #24262b
-client.urgent            #121212   #121212   #fdf6e3 #121212
+# class                  border  bground  text    indicator
+client.focused           #c40cb2 #c40cb2  #fdf6e3 #c40cb2
+client.focused_inactive  #24262b #24262b  #121212 #24262b
+client.unfocused         #24262b #24262b  #93a1a1 #24262b
+client.urgent            #121212 #121212  #fdf6e3 #121212
 
 exec_always --no-startup-id python3 /usr/bin/alternating_layouts.py &
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends &
+exec_always --no-startup-id vmware-user &
