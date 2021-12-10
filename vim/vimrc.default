@@ -5,6 +5,11 @@ set nocompatible
 filetype off
 
 " TODO: Load plugins here (pathogen or vundle)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'dylanaraps/wal.vim'
+call vundle#end
+
 
 " Turn on syntax highlighting
 syntax on
@@ -87,19 +92,7 @@ map <leader>q gqip
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
-" Uncomment this to enable by default:
-" set list " To enable by default
-" Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
-
-" Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
 
 " START - Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
@@ -113,12 +106,12 @@ if !filereadable(vundle_readme)
 endif
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 if iCanHazVundle == 0
-  echo "Installing Bundles, please ignore key map error messages"
-  echo ""
   :PluginInstall
 endif
+
 " END - Setting up Vundle - the vim plugin bundler
+
+colorscheme wal
