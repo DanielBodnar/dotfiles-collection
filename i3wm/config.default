@@ -19,7 +19,7 @@ font APL386: Nerd Font Mono 20
 floating_modifier $mod
 
 # Start a terminal.
-bindsym ctrl+Return exec urxvt
+bindsym $mod+Return exec urxvt
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
@@ -103,14 +103,15 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 
 # Enable float for some windows.
 for_window [class="^Pavucontrol$"]  floating enable
+for_window [class="^rdesktop$"]  floating enable
 for_window [class="^kitty$"]  	  floating enable resize set 800 700
 for_window [class="^nautilus$"]     floating enable
 for_window [class="^Lxappearance$"] floating enable
 for_window [class="^Arandr$"]       floating enable
 for_window [class="^Rofi$"]       floating enable
 
+
 floating_minimum_size 250 x 250
-default_floating_border pixel 3
 
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
@@ -134,13 +135,13 @@ mode "resize"
 
 bindsym $mod+r mode "resize"
 
-# class                  border  bground  text    indicator
-client.focused           #c40cb2 #c40cb2  #fdf6e3 #c40cb2
-client.focused_inactive  #24262b #24262b  #121212 #24262b
-client.unfocused         #24262b #24262b  #93a1a1 #24262b
-client.urgent            #121212 #121212  #fdf6e3 #121212
-
 exec_always --no-startup-id python3 /usr/bin/alternating_layouts.py &
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
 exec_always --no-startup-id vmware-user &
+exec_always --no-startup-id ~/.config/polybar/shapes/launch.sh
+
+for_window [class="^rdesktop$"]  border normal
+for_window [class="^KeePass2$"]  border normal
+for_window [class="^firefox$"]  border normal
+for_window [class="^code-oss$"]  border normal
