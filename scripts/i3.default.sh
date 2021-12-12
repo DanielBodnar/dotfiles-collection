@@ -12,7 +12,7 @@ WM="i3"
 VMENGINE="vmware"
 PICOMURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/picom/picom.conf.shadows"
 WALLPAPERURL="https://github.com/dontdoxxmeplz/wallpapers/raw/main/wall59.jpg"
-COLORSCHEMEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.nightburns"
+XRESOURCESURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/urxvt/Xresources.nightburns"
 ZSHRCURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zshrc.default"
 P10KURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/p10k.zsh.default"
 ZPROFILEURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/zsh/zprofile.default"
@@ -20,6 +20,7 @@ ZSHENVURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/m
 ROFIURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/rofi/rofi.rasi.dracula.purple"
 I3CONFIGURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/i3wm/config.default"
 XBINDKEYSURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/xbindkeysrc/xbindkeysrc.default"
+TMUXURL="https://raw.githubusercontent.com/dontdoxxmeplz/dotfiles-collection/main/tmux/tmux.conf.default"
 ALIASESURL="https://raw.githubusercontent.com/dontdoxxmeplz/aliases/main/aliases"
 YAYURL="https://aur.archlinux.org/yay.git"
 CURRENTUSER=$USER
@@ -34,7 +35,6 @@ mkdir -p ~/aliases/
 git config --global user.email "anon@anon.com" && git config --global user.name "anon"
 
 sudo pacman -Suuy -q --noconfirm && sudo pacman -S git curl python3 python-pip pacman-contrib go base-devel neovim -q --noconfirm
-sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf
 
 if ! [ -x "$(command -v yay)" ]; 
 then
@@ -130,7 +130,7 @@ git clone https://github.com/adi1090x/polybar-themes.git ~/.config/polybar-theme
 wget "$P10KURL" -O ~/.p10k.zsh
 wget "$ZSHRCURL" -O ~/.zshrc
 wget "$ZPROFILEURL"  -O ~/.zprofile
-wget "$COLORSCHEMEURL" -O ~/.Xresources
+wget "$XRESOURCESURL" -O ~/.Xresources
 wget "$PICOMURL" -O ~/.config/picom/picom.conf
 wget "$ZSHENVURL" -O ~/.zshenv
 wget "$ROFIURL" -O ~/.config/rofi/rofi.rasi
@@ -138,7 +138,10 @@ wget "$I3CONFIGURL" -O ~/.config/i3/config
 wget "$ALIASESURL" -O ~/aliases/aliases
 wget "$WALLPAPERURL" -O ~/.wallpaper.jpg
 wget "$XBINDKEYSURL" -O ~/.xbindkeysrc
+wget "$TMUXURL" -O ~/.tmux.conf
 chmod +x ~/.zprofile ~/.xinitrc ~/.zshenv ~/.zshrc
+
+sudo wget https://github.com/dontdoxxmeplz/fonts/raw/main/APL386-Awesome.ttf -O /usr/share/fonts/APL386-Awesome.ttf
 
 # Install oh-my-zsh
 # sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -149,3 +152,4 @@ sudo usermod -aG sudo $CURRENTUSER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 sudo usermod --shell $(which zsh) $CURRENTUSER
+sudo reboot
